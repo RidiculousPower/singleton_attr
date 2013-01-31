@@ -4,11 +4,11 @@ http://rubygems.org/gems/singleton_attr
 
 # Summary #
 
-Adds methods to declare attribute accessor/reader/writer on singleton instance.
+Adds methods to declare attribute accessor/reader/writer on singleton instance and methods to alias singleton methods.
 
 # Description #
 
-Provides :singleton_attr_accessor, :singleton_attr_reader, :singleton_attr_writer, :module_attr_accessor, :module_attr_reader, :module_attr_writer, :class_attr_accessor, :class_attr_reader, :class_attr_writer.
+Provides :singleton_attr_accessor, :singleton_attr_reader, :singleton_attr_writer, :module_attr_accessor, :module_attr_reader, :module_attr_writer, :class_attr_accessor, :class_attr_reader, :class_attr_writer as well as :alias_singleton_method, :alias_module_method, and :alias_class_method.
 
 # Install #
 
@@ -16,7 +16,7 @@ Provides :singleton_attr_accessor, :singleton_attr_reader, :singleton_attr_write
 
 # Usage #
 
-Just like :attr_accessor, :attr_reader, :attr_writer but instead of defining an instance method it defines a class/module method.
+Just like :attr_accessor, :attr_reader, :attr_writer, :alias_method but instead of defining an instance method it defines a class/module method.
 
 # License #
 

@@ -73,6 +73,18 @@ module ::SingletonAttr
 
   end
   
+  ############################
+  #  alias_singleton_method  #
+  ############################
+  
+  def alias_singleton_method( alias_name, method_name )
+
+    singleton_class.instance_eval { alias_method alias_name, method_name }
+    
+    return self
+
+  end
+  
 end
 
 ###
@@ -85,6 +97,8 @@ module ::SingletonAttr::Module
   alias_method :module_attr_accessor, :singleton_attr_accessor
   alias_method :module_attr_reader,   :singleton_attr_reader
   alias_method :module_attr_writer,   :singleton_attr_writer
+
+  alias_method :alias_module_method,   :alias_singleton_method
   
 end
 
@@ -98,6 +112,8 @@ module ::SingletonAttr::Class
   alias_method :class_attr_accessor, :singleton_attr_accessor
   alias_method :class_attr_reader,   :singleton_attr_reader
   alias_method :class_attr_writer,   :singleton_attr_writer
+
+  alias_method :alias_class_method,   :alias_singleton_method
 
 end
 

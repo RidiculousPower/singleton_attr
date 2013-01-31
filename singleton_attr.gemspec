@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
 
   spec.name                      = 'singleton_attr'
   spec.rubyforge_project         = 'singleton_attr'
-  spec.version                   = '1.0.0'
+  spec.version                   = '1.0.1'
 
   spec.summary                   = "Adds methods to declare attribute accessor/reader/writer on singleton instance."
   spec.description               = "Provides :singleton_attr_accessor, :singleton_attr_reader, :singleton_attr_writer, :module_attr_accessor, :module_attr_reader, :module_attr_writer, :class_attr_accessor, :class_attr_reader, :class_attr_writer."

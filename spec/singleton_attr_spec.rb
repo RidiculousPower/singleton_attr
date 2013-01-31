@@ -24,6 +24,11 @@ describe ::SingletonAttr do
       instance.instance_variable_get( :@writer ).should be :value
       instance.respond_to?( :writer ).should be false
     end
+    it '#alias_singleton_method aliases a method defined for singleton' do
+      instance.define_singleton_method( :some_method ) { puts 'method body' }
+      instance.alias_singleton_method( :other_method_name, :some_method )
+      instance.respond_to?( :other_method_name ).should be true
+    end
   end
 
   context 'Module' do
@@ -38,6 +43,9 @@ describe ::SingletonAttr do
     it 'aliases #singleton_attr_writer to #module_attr_writer' do
       instance.method( :module_attr_writer ).should == instance.method( :singleton_attr_writer )
     end
+    it 'aliases #alias_singleton_method to #alias_module_method' do
+      instance.method( :alias_module_method ).should == instance.method( :alias_singleton_method )
+    end
   end
 
   context 'Class' do
@@ -51,6 +59,9 @@ describe ::SingletonAttr do
     end
     it 'aliases #singleton_attr_writer to #class_attr_writer' do
       instance.method( :class_attr_writer ).should == instance.method( :singleton_attr_writer )
+    end
+    it 'aliases #alias_singleton_method to #alias_class_method' do
+      instance.method( :alias_class_method ).should == instance.method( :alias_singleton_method )
     end
   end
   
