@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 
 ###
 # Adds methods to declare attribute accessors/readers/writers on singletons. 
@@ -26,6 +27,12 @@ module ::SingletonAttr
     return self
     
   end
+  
+  #############################
+  #  attr_singleton_accessor  #
+  #############################
+  
+  alias_method :attr_singleton_accessor, :singleton_attr_accessor
 
   ###########################
   #  singleton_attr_reader  #
@@ -51,6 +58,12 @@ module ::SingletonAttr
   end
 
   ###########################
+  #  attr_singleton_reader  #
+  ###########################
+
+  alias_method :attr_singleton_reader, :singleton_attr_reader
+
+  ###########################
   #  singleton_attr_writer  #
   ###########################
   
@@ -72,6 +85,12 @@ module ::SingletonAttr
     return self
 
   end
+  
+  ###########################
+  #  attr_singleton_writer  #
+  ###########################
+  
+  alias_method :attr_singleton_writer, :singleton_attr_writer
   
   ############################
   #  alias_singleton_method  #
